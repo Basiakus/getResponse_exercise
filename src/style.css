@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+:root {
+  --orangeColor: rgb(255, 129, 19);
+  --greenColor: rgb(162, 176, 0);
+  --grayBackground: rgb(229, 229, 229);
+  --lightGrayColor: rgb(196, 196, 196);
+  --textColor: rgb(150, 150, 150); }
+
+body {
+  font-family: 'Rubik', sans-serif;
+  width: 100%;
+  height: 100%;
+  color: var(--textColor); }
+  body .app {
+    user-select: none;
+    width: 100vw;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    body .app .header {
+      margin-top: 20vh;
+      margin-bottom: 3vh;
+      display: flex;
+      flex: 5;
+      width: 70vw;
+      justify-content: space-between; }
+      body .app .header .slider {
+        margin: 0 7vw;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex: 1; }
+        body .app .header .slider span {
+          display: flex;
+          flex: 7;
+          justify-content: center;
+          align-items: center;
+          color: var(--orangeColor);
+          font-size: 3vw; }
+        body .app .header .slider .leftArrow, body .app .header .slider .rightArrow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex: 1;
+          border: 1px solid var(--textColor);
+          border-radius: 5px;
+          font-size: 2em;
+          transition: .2s; }
+          body .app .header .slider .leftArrow:active, body .app .header .slider .rightArrow:active {
+            font-size: 1.9em; }
+      body .app .header .miniNav {
+        display: flex;
+        flex: 1; }
+        body .app .header .miniNav p {
+          font-size: .9vw;
+          margin-bottom: 3vh; }
+        body .app .header .miniNav .progressBar {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column; }
+          body .app .header .miniNav .progressBar .progressPoints {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; }
+            body .app .header .miniNav .progressBar .progressPoints .progressPointActive {
+              font-size: 1vw;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-direction: column;
+              text-align: center;
+              transition: .4s;
+              color: var(--lightGrayColor); }
+              body .app .header .miniNav .progressBar .progressPoints .progressPointActive span {
+                margin-top: .5vh;
+                font-size: .8vw;
+                font-weight: bold;
+                color: var(--textColor); }
+            body .app .header .miniNav .progressBar .progressPoints .progressPoint {
+              font-size: 1vw;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-direction: column;
+              text-align: center;
+              color: var(--greenColor);
+              transition: .4s; }
+              body .app .header .miniNav .progressBar .progressPoints .progressPoint span {
+                margin-top: .5vh;
+                font-size: .8vw;
+                font-weight: bold;
+                color: var(--textColor); }
+      body .app .header .proteinSelector {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+        flex: 1; }
+        body .app .header .proteinSelector p {
+          font-size: .9vw; }
+        body .app .header .proteinSelector .icons {
+          display: flex;
+          flex-direction: row;
+          align-items: center; }
+          body .app .header .proteinSelector .icons div {
+            width: 100%;
+            font-size: 3vw;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            transition: .4s; }
+          body .app .header .proteinSelector .icons .selected {
+            color: var(--greenColor); }
+          body .app .header .proteinSelector .icons .unselected {
+            color: var(--lightGrayColor); }
+    body .app .calendar {
+      background-color: white;
+      height: 70vh;
+      width: 70vw;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      border-radius: 7px; }
+      body .app .calendar .dayTimes, body .app .calendar .day, body .app .calendar .dayOff {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        list-style-type: none;
+        border-right: 1px solid var(--grayBackground); }
+        body .app .calendar .dayTimes li, body .app .calendar .day li, body .app .calendar .dayOff li {
+          display: flex;
+          flex: 5;
+          justify-content: center;
+          align-items: center;
+          font-size: .8vw;
+          text-align: center;
+          padding: 5px;
+          border-bottom: 1px solid var(--grayBackground); }
+          body .app .calendar .dayTimes li:first-child, body .app .calendar .day li:first-child, body .app .calendar .dayOff li:first-child {
+            flex: 3;
+            color: var(--greenColor);
+            font-size: 1.8vw; }
+          body .app .calendar .dayTimes li:last-child, body .app .calendar .day li:last-child, body .app .calendar .dayOff li:last-child {
+            flex: 3;
+            background-color: var(--grayBackground); }
+      body .app .calendar .dayTimes {
+        background-color: var(--grayBackground);
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px; }
+        body .app .calendar .dayTimes li {
+          font-size: 1vw;
+          font-weight: bold;
+          color: #666666;
+          border-bottom: thin solid var(--lightGrayColor); }
+          body .app .calendar .dayTimes li span {
+            margin-left: 3px;
+            color: var(--textColor);
+            font-weight: normal; }
+          body .app .calendar .dayTimes li:nth-child(6) {
+            border-bottom: none; }
+          body .app .calendar .dayTimes li:last-child {
+            border-bottom-left-radius: 7px;
+            border-bottom: none; }
+            body .app .calendar .dayTimes li:last-child .workout {
+              height: 100%;
+              flex-direction: column; }
+              body .app .calendar .dayTimes li:last-child .workout p {
+                border-top: thin solid var(--lightGrayColor); }
+          body .app .calendar .dayTimes li:first-child {
+            border-bottom: none; }
+      body .app .calendar .dayOff {
+        border-bottom-right-radius: 7px;
+        border-right: none; }
+        body .app .calendar .dayOff li:first-child, body .app .calendar .dayOff li:last-child {
+          flex: 3; }
+        body .app .calendar .dayOff li:nth-child(2) {
+          flex: 28;
+          justify-content: center;
+          align-items: center;
+          position: relative; }
+          body .app .calendar .dayOff li:nth-child(2) span {
+            width: 300%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: absolute;
+            transform: rotate(-90deg);
+            font-size: 3em; }
+            body .app .calendar .dayOff li:nth-child(2) span #grin {
+              transform: rotate(90deg);
+              margin-right: 2vh; }
+        body .app .calendar .dayOff li:last-child {
+          user-select: none;
+          border-bottom-right-radius: 7px;
+          padding: 0px;
+          font-size: 1em;
+          transition: .2s; }
+          body .app .calendar .dayOff li:last-child span {
+            margin-left: 2%; }
+          body .app .calendar .dayOff li:last-child:hover {
+            cursor: pointer;
+            color: var(--orangeColor); }
+          body .app .calendar .dayOff li:last-child:active {
+            font-size: .98em; }
+      body .app .calendar .day li:last-child, body .app .calendar .dayTimes li:last-child {
+        padding: 0px; }
+      body .app .calendar .day span.workout, body .app .calendar .dayTimes span.workout {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column; }
+        body .app .calendar .day span.workout p, body .app .calendar .day span.workout span, body .app .calendar .dayTimes span.workout p, body .app .calendar .dayTimes span.workout span {
+          display: flex;
+          flex: 1;
+          justify-content: center;
+          align-items: center; }
+      body .app .calendar .day:nth-child(odd) li:nth-child(4) {
+        background-image: url("./img/smootiee.png");
+        background-position: 80% 100%;
+        background-size: 150%;
+        background-repeat: no-repeat; }
+      body .app .calendar .day li {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left; }
+        body .app .calendar .day li:nth-child(1n+2) {
+          filter: grayscale(100%); }
+        body .app .calendar .day li:first-child {
+          justify-content: center;
+          align-items: center;
+          text-align: center; }
+        body .app .calendar .day li:nth-child(2) {
+          background-image: url("./img/smootiee.png");
+          background-position: 80% 100%;
+          background-size: 150%;
+          background-repeat: no-repeat; }
+        body .app .calendar .day li:last-child {
+          border-right: 1px solid var(--lightGrayColor); }
+          body .app .calendar .day li:last-child span.workout {
+            text-align: center;
+            display: flex;
+            flex-direction: column; }
+            body .app .calendar .day li:last-child span.workout p {
+              border-bottom: 1px solid var(--lightGrayColor);
+              flex: 1; }
+            body .app .calendar .day li:last-child span.workout label {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              color: var(--orangeColor);
+              font-size: 1.1em;
+              position: relative;
+              flex: 1; }
+              body .app .calendar .day li:last-child span.workout label input {
+                position: absolute;
+                left: 60%; }
+      body .app .calendar .day:hover {
+        border: 2px solid var(--orangeColor); }
+        body .app .calendar .day:hover li {
+          filter: grayscale(0%);
+          color: black; }
+          body .app .calendar .day:hover li:first-child {
+            color: var(--orangeColor); }
+    body .app .footer {
+      display: flex;
+      width: 100%; }
