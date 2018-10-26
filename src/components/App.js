@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Calendar from './Calendar';
 import Footer from './Footer';
+import Nav from './Nav';
 import { library } from '@fortawesome/fontawesome-svg-core';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDumbbell, faPrint, faCircle, faGrin, faCheck} from '@fortawesome/free-solid-svg-icons';
@@ -96,6 +97,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="app">
+				<Nav />
 				<Header state={this.state} 
 						prevWeek={this.prevWeek} 
 						nextWeek={this.nextWeek}

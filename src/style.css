@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik");
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  list-style-type: none; }
 
 :root {
   --orangeColor: rgb(255, 129, 19);
@@ -17,67 +19,213 @@ body {
   color: var(--textColor);
   background-color: #f9f9f9; }
   body .app {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     width: 100%; }
+    body .app .nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      height: 8vh;
+      border-bottom: 1px solid var(--grayBackground);
+      background-color: white;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      -webkit-box-shadow: 0px 1px 1px 0px var(--lightGrayColor);
+      box-shadow: 0px 1px 1px 0px var(--lightGrayColor); }
+      body .app .nav ul {
+        height: 100%;
+        width: 80%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+        body .app .nav ul li {
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-transition: .3s;
+          -o-transition: .3s;
+          transition: .3s;
+          font-size: 1vw;
+          font-weight: bold;
+          text-transform: uppercase; }
+          body .app .nav ul li:hover {
+            color: var(--orangeColor); }
+          body .app .nav ul li:nth-child(2) {
+            border-left: 1px solid var(--grayBackground); }
+          body .app .nav ul li:last-child {
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between; }
+            body .app .nav ul li:last-child .img {
+              padding: 15%;
+              border-radius: 50%;
+              background-image: url("https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-0.3.5&s=5da2982426ae7e8085acbc322d7ad54d&auto=format&fit=crop&w=1050&q=80");
+              background-size: cover;
+              background-position: center;
+              -webkit-box-shadow: 0px 2px 0px 0px var(--textColor);
+              box-shadow: 0px 2px 0px 0px var(--textColor); }
+            body .app .nav ul li:last-child #name {
+              font-size: .8vw; }
+            body .app .nav ul li:last-child #open {
+              -webkit-transform: rotate(-90deg);
+              -ms-transform: rotate(-90deg);
+              transform: rotate(-90deg); }
     body .app .header {
       height: 8vh;
       margin-top: 17vh;
       width: 80%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
       justify-content: space-between; }
       body .app .header .slider {
         width: 25%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
         display: flex; }
         body .app .header .slider span {
+          -webkit-box-flex: 4;
+          -ms-flex: 4;
           flex: 4;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           color: var(--orangeColor);
           font-size: 3vw;
           text-align: center; }
         body .app .header .slider .leftArrow, body .app .header .slider .rightArrow {
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
           flex: 1;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           border: 1px solid var(--textColor);
           border-radius: 5px;
           font-size: 2vw;
+          -webkit-transition: .3s;
+          -o-transition: .3s;
           transition: .3s; }
           body .app .header .slider .leftArrow:active, body .app .header .slider .rightArrow:active {
+            -webkit-transform: scale(0.95);
+            -ms-transform: scale(0.95);
             transform: scale(0.95); }
           body .app .header .slider .leftArrow:hover, body .app .header .slider .rightArrow:hover {
             color: var(--orangeColor);
             border: 1px solid var(--orangeColor); }
       body .app .header .miniNav {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 25%; }
         body .app .header .miniNav .progressBar {
           width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
           justify-content: space-between;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column; }
           body .app .header .miniNav .progressBar p {
             font-size: .9vw; }
           body .app .header .miniNav .progressBar .progressPoints {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
             flex-direction: row;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between; }
             body .app .header .miniNav .progressBar .progressPoints .progressPointActive {
               font-size: 1vw;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
+              -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
               justify-content: space-between;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
               align-items: center;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
               flex-direction: column;
               text-align: center;
+              -webkit-transition: .4s;
+              -o-transition: .4s;
               transition: .4s;
               color: var(--lightGrayColor); }
               body .app .header .miniNav .progressBar .progressPoints .progressPointActive span {
@@ -87,12 +235,23 @@ body {
                 color: var(--textColor); }
             body .app .header .miniNav .progressBar .progressPoints .progressPoint {
               font-size: 1vw;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
+              -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
               justify-content: space-between;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
               align-items: center;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
               flex-direction: column;
               text-align: center;
               color: var(--greenColor);
+              -webkit-transition: .4s;
+              -o-transition: .4s;
               transition: .4s; }
               body .app .header .miniNav .progressBar .progressPoints .progressPoint span {
                 margin-top: 20%;
@@ -100,24 +259,48 @@ body {
                 font-weight: bold;
                 color: var(--textColor); }
       body .app .header .proteinSelector {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         display: flex;
         width: 25%; }
         body .app .header .proteinSelector p {
           font-size: .9vw; }
         body .app .header .proteinSelector .icons {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center; }
           body .app .header .proteinSelector .icons div {
             width: 100%;
             font-size: 2.5vw;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
             flex: 1;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-transition: .4s;
+            -o-transition: .4s;
             transition: .4s; }
           body .app .header .proteinSelector .icons .selected {
             color: var(--greenColor); }
@@ -128,31 +311,58 @@ body {
       margin-top: 3vh;
       height: 70vh;
       background-color: white;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
       align-items: stretch;
       border-radius: 7px;
+      -webkit-box-shadow: 0px 0px 30px 0px #e3e0e3;
       box-shadow: 0px 0px 30px 0px #e3e0e3; }
       body .app .calendar .dayTimes, body .app .calendar .day, body .app .calendar .dayOff {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
         flex: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         list-style-type: none;
         border-right: 1px solid var(--grayBackground); }
         body .app .calendar .dayTimes li, body .app .calendar .day li, body .app .calendar .dayOff li {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-flex: 5;
+          -ms-flex: 5;
           flex: 5;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           font-size: .8vw;
           text-align: center;
           padding: 5px;
           border-bottom: 1px solid var(--grayBackground); }
           body .app .calendar .dayTimes li:first-child, body .app .calendar .day li:first-child, body .app .calendar .dayOff li:first-child {
+            -webkit-box-flex: 3;
+            -ms-flex: 3;
             flex: 3;
             color: var(--greenColor);
             font-size: 1.8vw; }
           body .app .calendar .dayTimes li:last-child, body .app .calendar .day li:last-child, body .app .calendar .dayOff li:last-child {
+            -webkit-box-flex: 3;
+            -ms-flex: 3;
             flex: 3;
             background-color: var(--grayBackground); }
       body .app .calendar .dayTimes {
@@ -174,6 +384,9 @@ body {
             border-bottom: none; }
             body .app .calendar .dayTimes li:last-child .workout {
               height: 100%;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
               flex-direction: column; }
               body .app .calendar .dayTimes li:last-child .workout p {
                 border-top: thin solid var(--lightGrayColor); }
@@ -183,28 +396,51 @@ body {
         border-bottom-right-radius: 7px;
         border-right: none; }
         body .app .calendar .dayOff li:first-child, body .app .calendar .dayOff li:last-child {
+          -webkit-box-flex: 3;
+          -ms-flex: 3;
           flex: 3; }
         body .app .calendar .dayOff li:nth-child(2) {
+          -webkit-box-flex: 28;
+          -ms-flex: 28;
           flex: 28;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           position: relative; }
           body .app .calendar .dayOff li:nth-child(2) span {
             width: 300%;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             position: absolute;
+            -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
             transform: rotate(-90deg);
             font-size: 3em; }
             body .app .calendar .dayOff li:nth-child(2) span #grin {
+              -webkit-transform: rotate(90deg);
+              -ms-transform: rotate(90deg);
               transform: rotate(90deg);
               margin-right: 2vh; }
         body .app .calendar .dayOff li:last-child {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
           user-select: none;
           border-bottom-right-radius: 7px;
           padding: 0px;
           font-size: 1em;
+          -webkit-transition: .2s;
+          -o-transition: .2s;
           transition: .2s; }
           body .app .calendar .dayOff li:last-child span {
             margin-left: 3%; }
@@ -218,12 +454,25 @@ body {
       body .app .calendar .day span.workout, body .app .calendar .dayTimes span.workout {
         width: 100%;
         height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column; }
         body .app .calendar .day span.workout p, body .app .calendar .day span.workout #icons, body .app .calendar .day span.workout span, body .app .calendar .dayTimes span.workout p, body .app .calendar .dayTimes span.workout #icons, body .app .calendar .dayTimes span.workout span {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
           flex: 1;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center; }
       body .app .calendar .day:nth-child(odd) li:nth-child(4) {
         background-image: url("./img/smootiee.png");
@@ -231,7 +480,11 @@ body {
         background-size: 150%;
         background-repeat: no-repeat; }
       body .app .calendar .day li {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
         text-align: left; }
         body .app .calendar .day li .eaten {
@@ -242,31 +495,47 @@ body {
           width: 100%;
           height: 100%;
           z-index: 1;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center; }
 
 @-webkit-keyframes stampel {
   0% {
+    -webkit-transform: scale(1);
     transform: scale(1); }
   30% {
+    -webkit-transform: scale(1.05);
     transform: scale(1.05); }
   40% {
+    -webkit-transform: scale(0.95);
     transform: scale(0.95); }
   50% {
+    -webkit-transform: scale(0.98);
     transform: scale(0.98); } }
 
 @keyframes stampel {
   0% {
+    -webkit-transform: scale(1);
     transform: scale(1); }
   30% {
+    -webkit-transform: scale(1.05);
     transform: scale(1.05); }
   40% {
+    -webkit-transform: scale(0.95);
     transform: scale(0.95); }
   50% {
+    -webkit-transform: scale(0.98);
     transform: scale(0.98); } }
           body .app .calendar .day li .eaten p {
             text-transform: uppercase;
+            -webkit-transform: rotate(-20deg);
+            -ms-transform: rotate(-20deg);
             transform: rotate(-20deg);
             font-size: 1.5vw;
             color: var(--greenColor);
@@ -274,10 +543,13 @@ body {
             border: 0.2vw solid var(--greenColor);
             border-radius: 5px;
             padding: 3%;
+            -webkit-animation-name: stampel;
             animation-name: stampel;
+            -webkit-animation-duration: s;
             animation-duration: s;
             position: relative; }
         body .app .calendar .day li .notEaten {
+          -webkit-animation: stampel 1s;
           animation: stampel 1s;
           opacity: 1;
           position: absolute;
@@ -286,33 +558,51 @@ body {
           width: 100%;
           height: 100%;
           z-index: 1;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
+          -webkit-animation-name: stampel;
           animation-name: stampel;
+          -webkit-animation-duration: .6s;
           animation-duration: .6s; }
 
 @-webkit-keyframes stampel {
   0% {
+    -webkit-transform: scale(1);
     transform: scale(1); }
   30% {
+    -webkit-transform: scale(1.05);
     transform: scale(1.05); }
   40% {
+    -webkit-transform: scale(0.95);
     transform: scale(0.95); }
   50% {
+    -webkit-transform: scale(0.98);
     transform: scale(0.98); } }
 
 @keyframes stampel {
   0% {
+    -webkit-transform: scale(1);
     transform: scale(1); }
   30% {
+    -webkit-transform: scale(1.05);
     transform: scale(1.05); }
   40% {
+    -webkit-transform: scale(0.95);
     transform: scale(0.95); }
   50% {
+    -webkit-transform: scale(0.98);
     transform: scale(0.98); } }
           body .app .calendar .day li .notEaten p {
             text-transform: uppercase;
+            -webkit-transform: rotate(-20deg);
+            -ms-transform: rotate(-20deg);
             transform: rotate(-20deg);
             font-size: 1.5vw;
             color: var(--greenColor);
@@ -320,44 +610,75 @@ body {
             border: 0.2vw solid var(--greenColor);
             border-radius: 5px;
             padding: 3%;
+            -webkit-animation-duration: 1s;
             animation-duration: 1s;
             position: relative; }
         body .app .calendar .day li span.workout {
+          -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
           text-align: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column; }
           body .app .calendar .day li span.workout p {
             border-bottom: 1px solid var(--lightGrayColor);
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
             flex: 1; }
           body .app .calendar .day li span.workout .icons {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
             flex: 1;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
             text-align: center;
             font-size: 1.3em;
             z-index: 2; }
             body .app .calendar .day li span.workout .icons .check {
+              -webkit-transition: .5s;
+              -o-transition: .5s;
               transition: .5s;
               color: var(--orangeColor);
               position: absolute;
               left: 65%;
               opacity: 0; }
             body .app .calendar .day li span.workout .icons .dumbbell {
+              -webkit-transition: .3s;
+              -o-transition: .3s;
               transition: .3s; }
               body .app .calendar .day li span.workout .icons .dumbbell:hover {
                 cursor: pointer;
                 color: var(--orangeColor); }
           body .app .calendar .day li span.workout .iconsDone {
             color: var(--orangeColor);
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
             flex: 1;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
             text-align: center;
             font-size: 1.3em; }
             body .app .calendar .day li span.workout .iconsDone .check {
+              -webkit-transition: .5s;
+              -o-transition: .5s;
               transition: .5s;
               position: absolute;
               left: 65%;
@@ -365,9 +686,14 @@ body {
             body .app .calendar .day li span.workout .iconsDone .dumbbell:hover {
               cursor: pointer; }
         body .app .calendar .day li:nth-child(1n+2) {
+          -webkit-filter: grayscale(100%);
           filter: grayscale(100%); }
         body .app .calendar .day li:first-child {
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           text-align: center; }
         body .app .calendar .day li:nth-child(2) {
@@ -377,23 +703,34 @@ body {
           background-repeat: no-repeat; }
         body .app .calendar .day li:last-child {
           border-right: 1px solid var(--lightGrayColor);
+          -webkit-filter: grayscale(0%);
           filter: grayscale(0%); }
       body .app .calendar .day:hover {
         border: 2px solid var(--orangeColor); }
         body .app .calendar .day:hover li:nth-child(1), body .app .calendar .day:hover li:nth-child(2), body .app .calendar .day:hover li:nth-child(3), body .app .calendar .day:hover li:nth-child(4), body .app .calendar .day:hover li:nth-child(5), body .app .calendar .day:hover li:nth-child(6) {
+          -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
           color: black; }
         body .app .calendar .day:hover li:first-child {
           color: var(--orangeColor); }
     body .app .footer {
       margin: 10vh 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       width: 80%;
       display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center; }
       body .app .footer .shoping, body .app .footer .mobile, body .app .footer .faq {
         border-left: 1px solid var(--lightGrayColor);
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         padding: 0 4% 0 2%; }
         body .app .footer .shoping h2, body .app .footer .mobile h2, body .app .footer .faq h2 {
@@ -403,34 +740,54 @@ body {
           font-size: 1vw; }
         body .app .footer .shoping .buttons, body .app .footer .mobile .buttons, body .app .footer .faq .buttons {
           position: relative;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
           color: var(--textColor); }
           body .app .footer .shoping .buttons #android, body .app .footer .mobile .buttons #android, body .app .footer .faq .buttons #android {
             left: 20%; }
           body .app .footer .shoping .buttons .button, body .app .footer .mobile .buttons .button, body .app .footer .faq .buttons .button {
             position: absolute;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
             padding: 2px 15px 2px 4px;
             border-radius: 3px;
             border: 1px solid var(--textColor);
             margin-right: 3%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
             flex-direction: row;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-transition: .2s;
+            -o-transition: .2s;
             transition: .2s;
             font-size: 1vw; }
             body .app .footer .shoping .buttons .button span, body .app .footer .mobile .buttons .button span, body .app .footer .faq .buttons .button span {
               right: 0;
               position: absolute;
               padding-right: 7%;
+              -webkit-transition: .15s;
+              -o-transition: .15s;
               transition: .15s;
               font-weight: bold; }
             body .app .footer .shoping .buttons .button:hover, body .app .footer .mobile .buttons .button:hover, body .app .footer .faq .buttons .button:hover {
               color: var(--greenColor); }
               body .app .footer .shoping .buttons .button:hover span, body .app .footer .mobile .buttons .button:hover span, body .app .footer .faq .buttons .button:hover span {
+                -webkit-transform: rotateX(45deg);
                 transform: rotateX(45deg); }
             body .app .footer .shoping .buttons .button:active, body .app .footer .mobile .buttons .button:active, body .app .footer .faq .buttons .button:active {
+              -webkit-transform: scale(0.97);
+              -ms-transform: scale(0.97);
               transform: scale(0.97);
               color: var(--orangeColor); }
               body .app .footer .shoping .buttons .button:active span, body .app .footer .mobile .buttons .button:active span, body .app .footer .faq .buttons .button:active span {
@@ -440,11 +797,218 @@ body {
         border: none; }
 
 @media only screen and (max-width: 768px) {
-  body .app .header {
-    width: 95%;
+  body .app .nav {
     height: 5vh; }
+    body .app .nav ul {
+      width: 100%; }
+      body .app .nav ul li {
+        font-size: 1.5vw;
+        padding: 2vw; }
+        body .app .nav ul li:last-child {
+          -webkit-box-flex: 4;
+          -ms-flex: 4;
+          flex: 4; }
+          body .app .nav ul li:last-child .img {
+            padding: 12%; }
+          body .app .nav ul li:last-child #name {
+            font-size: 1.5vw;
+            margin-left: 1vw; }
+  body .app .header {
+    font-size: 10vw;
+    width: 99%;
+    height: 5vh;
+    margin-top: 8vh; }
+    body .app .header .slider {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      margin: 0 5%; }
+    body .app .header .miniNav {
+      -webkit-box-flex: 2;
+      -ms-flex: 2;
+      flex: 2; }
+      body .app .header .miniNav .progressBar p {
+        font-size: 1.8vw;
+        font-weight: bold; }
+      body .app .header .miniNav .progressBar .progressPoints .progressPoint, body .app .header .miniNav .progressBar .progressPoints .progressPointActive {
+        font-size: 1.5vw; }
+        body .app .header .miniNav .progressBar .progressPoints .progressPoint span, body .app .header .miniNav .progressBar .progressPoints .progressPointActive span {
+          font-size: 1.5vw; }
+    body .app .header .proteinSelector {
+      -webkit-box-flex: 2;
+      -ms-flex: 2;
+      flex: 2; }
+      body .app .header .proteinSelector p {
+        font-size: 1.5vw;
+        font-weight: bold; }
+      body .app .header .proteinSelector .icons .selected, body .app .header .proteinSelector .icons .unselected {
+        font-size: 4vw; }
+  body .app .calendar {
+    width: 99%;
+    height: 50vh; }
+    body .app .calendar .dayTimes li, body .app .calendar .day li {
+      font-size: 1.3vw;
+      text-align: center;
+      font-weight: bold;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      text-transform: uppercase;
+      text-align: center; }
+    body .app .calendar .day:hover {
+      border: 0px solid black; }
+    body .app .calendar .dayOff {
+      font-size: 3vw; }
+      body .app .calendar .dayOff li span {
+        font-size: .6em; }
+        body .app .calendar .dayOff li span:nth-child(3) {
+          font-size: .5vw; }
+  body .app .footer {
+    width: 99%;
+    margin: 3vh 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    body .app .footer .shoping, body .app .footer .mobile, body .app .footer .faq {
+      width: 60%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-top: 3vh;
+      padding-bottom: 3vh;
+      border: none;
+      border-bottom: 2px solid var(--lightGrayColor); }
+      body .app .footer .shoping h2, body .app .footer .mobile h2, body .app .footer .faq h2 {
+        font-size: 6vw;
+        text-align: center;
+        color: var(--orangeColor); }
+      body .app .footer .shoping p, body .app .footer .mobile p, body .app .footer .faq p {
+        font-size: 4vw;
+        text-align: center;
+        color: var(--greenColor); }
+      body .app .footer .shoping .buttons, body .app .footer .mobile .buttons, body .app .footer .faq .buttons {
+        width: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+        body .app .footer .shoping .buttons #android, body .app .footer .mobile .buttons #android, body .app .footer .faq .buttons #android {
+          left: 0; }
+        body .app .footer .shoping .buttons .button, body .app .footer .mobile .buttons .button, body .app .footer .faq .buttons .button {
+          width: 40%;
+          position: relative;
+          font-size: 3vw;
+          font-weight: bold;
+          padding: 1vw 1.5vw;
+          text-align: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; } }
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  body .app .nav {
+    height: 12vh; }
+    body .app .nav ul li {
+      font-size: 1.5vw; }
+      body .app .nav ul li:last-child .img {
+        padding: 12%; }
+      body .app .nav ul li:last-child #name {
+        font-size: 1.5vw; }
+  body .app .header {
+    font-size: 10vw;
+    width: 95%;
+    height: 15vh;
+    margin-top: 20vh; }
+    body .app .header .slider {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      margin: 0 2%; }
+    body .app .header .miniNav {
+      -webkit-box-flex: 1.5;
+      -ms-flex: 1.5;
+      flex: 1.5; }
+      body .app .header .miniNav .progressBar p {
+        font-size: 1.8vw;
+        font-weight: bold; }
+      body .app .header .miniNav .progressBar .progressPoints .progressPoint, body .app .header .miniNav .progressBar .progressPoints .progressPointActive {
+        font-size: 1.5vw; }
+        body .app .header .miniNav .progressBar .progressPoints .progressPoint span, body .app .header .miniNav .progressBar .progressPoints .progressPointActive span {
+          font-size: 1.5vw; }
+    body .app .header .proteinSelector {
+      -webkit-box-flex: 1.5;
+      -ms-flex: 1.5;
+      flex: 1.5; }
+      body .app .header .proteinSelector p {
+        font-size: 1.5vw;
+        font-weight: bold; }
+      body .app .header .proteinSelector .icons .selected, body .app .header .proteinSelector .icons .unselected {
+        font-size: 4vw; }
   body .app .calendar {
     width: 95%;
-    height: 70vh; }
-    body .app .calendar .dayTimes li, body .app .calendar .day li, body .app .calendar .dayOff li {
-      font-size: 1.5vw; } }
+    height: 90vh; }
+    body .app .calendar .dayTimes li, body .app .calendar .day li {
+      font-size: 1.2vw;
+      text-align: center;
+      font-weight: bold;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+    body .app .calendar .day:hover {
+      border: 0px solid black; }
+    body .app .calendar .dayOff {
+      font-size: 3vw; }
+      body .app .calendar .dayOff li span {
+        font-size: .6em; }
+        body .app .calendar .dayOff li span:nth-child(3) {
+          font-size: .5vw; }
+  body .app .footer {
+    width: 100%;
+    margin: 5vh 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    body .app .footer .shoping, body .app .footer .mobile, body .app .footer .faq {
+      width: 60%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-top: 3vh;
+      padding-bottom: 3vh;
+      border: none;
+      border-bottom: 2px solid var(--lightGrayColor); }
+      body .app .footer .shoping h2, body .app .footer .mobile h2, body .app .footer .faq h2 {
+        font-size: 6vw;
+        text-align: center; }
+      body .app .footer .shoping p, body .app .footer .mobile p, body .app .footer .faq p {
+        font-size: 4vw;
+        text-align: center; }
+      body .app .footer .shoping .buttons .button, body .app .footer .mobile .buttons .button, body .app .footer .faq .buttons .button {
+        position: relative;
+        font-size: 1.5vw;
+        padding: 1vw 3vw; } }
