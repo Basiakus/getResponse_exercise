@@ -4,29 +4,21 @@ import Calendar from './Calendar';
 import Footer from './Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDumbbell, faPrint, faCircle, faGrin} from '@fortawesome/free-solid-svg-icons';
+import { faDumbbell, faPrint, faCircle, faGrin, faCheck} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faDumbbell, faPrint, faCircle, faGrin);
+library.add(faDumbbell, faPrint, faCircle, faGrin, faCheck);
 
 class App extends React.Component {
 
 	state = {
 		currentWeek: 1,
 		workOuts: 0,
+		meals: 0,
 		fish: true,
 		beef: true,
 		chicken: true,
 		apple: true,
-		bread: true,
-		meals: {
-			shake: 0,
-			steak: 0,
-			turkey: 0,
-			garlic: 0,
-			ham: 0,
-			mozarella: 0,
-			muffin: 0
-		}
+		bread: true
 	}
 	
 	nextWeek = () => {
@@ -81,6 +73,26 @@ class App extends React.Component {
 		}));
 	}
 
+	addWorkout = (isDone) => {
+		(!isDone) ?
+			this.setState(prevState => ({
+				workOuts: prevState.workOuts +1
+			})) :
+			this.setState(prevState => ({
+				workOuts: prevState.workOuts -1
+			}))
+	}
+
+	addMeals = (isEaten) => {
+		(!isEaten) ?
+			this.setState(prevState => ({
+				meals: prevState.meals +1
+			})) :
+			this.setState(prevState => ({
+				meals: prevState.meals -1
+			}))
+	}
+
 	render() {
 		return (
 			<div className="app">
@@ -93,7 +105,11 @@ class App extends React.Component {
 						chickenSelect={this.chickenSelect}
 						beefSelect={this.beefSelect}
 				/>
-				<Calendar state={this.state} />
+				<Calendar 
+					state={this.state} 
+					addWorkout={this.addWorkout}
+					addMeals={this.addMeals}
+				/>
 				<Footer />	
 			</div>
 		);
